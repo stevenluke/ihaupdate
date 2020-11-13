@@ -1,0 +1,6 @@
+---
+- hosts: "{{ inventory_hostname }}"
+  roles:
+        - yum-update
+        - dnf-update
+        - reboot-check

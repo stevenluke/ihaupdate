@@ -1,0 +1,9 @@
+---
+# tasks file for roles/vcheck
+- debug:
+        msg: "{{ hostvars[inventory_hostname].ansible_distribution }}"
+- debug:
+        msg: "{{ hostvars[inventory_hostname].ansible_distribution_major_version }}"
+- debug:
+        msg: "{{ hostvars[inventory_hostname].ansible_distribution_version }}"
+

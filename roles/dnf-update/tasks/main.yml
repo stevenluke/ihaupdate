@@ -1,0 +1,19 @@
+---
+# tasks file for roles/dnf-update
+- name: upgrade packages via dnf
+  dnf:
+        name={{ dnf_name }}
+        state={{ dnf_state }}
+        disablerepo={{ dnf_disablerepo }}
+        enablerepo={{ dnf_enablerepo }}
+        exclude={{ dnf_exclude }}
+  become: "yes"
+  register: dnfcommandout
+  when:
+        - ansible_facts['distribution_major_version'] == '8'
+
+- name: Print errors if dnf failed
+  debug:
+        msg: "dnf command produced errors"
+  when: dnfcommandout is not defined
+
