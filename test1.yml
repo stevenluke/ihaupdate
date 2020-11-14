@@ -1,5 +1,6 @@
 ---
 #- hosts: "{{ inventory_hostname }}"
+- name:  Write test to a remote file
   become: yes
   tasks:
   - name: Create test
