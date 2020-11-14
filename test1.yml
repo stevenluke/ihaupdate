@@ -1,0 +1,8 @@
+---
+- hosts: "{{ inventory_hostname }}"
+  become: yes
+  tasks:
+  - name: Create test
+    copy:
+      content:  "TEST TEST"
+      dest: /tmp/steve.txt
