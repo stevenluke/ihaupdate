@@ -1,6 +1,6 @@
 ---
 - hosts: all
   roles:
-        - yum-update
-        - dnf-update
+        - yum-updatec
+        - dnf-updatec
         - reboot-check

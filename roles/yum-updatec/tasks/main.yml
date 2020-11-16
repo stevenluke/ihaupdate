@@ -1,0 +1,19 @@
+---
+# tasks file for roles/yum-update
+  - name: upgrade packages via yum
+    yum:
+        name="{{ yum_name }}"
+        state="{{ yum_state }}"
+        disablerepo="{{ yum_disablerepo }}"
+        enablerepo="{{ yum_enablerepo }}"
+        exclude="{{ yum_exclude }}"
+    become: true
+    register: yumcommandout
+    when:
+        - (ansible_facts['distribution_major_version'] == '6') or
+          (ansible_facts['distribution_major_version'] == '7')
+
+  - name: Print errors if yum failed
+    debug:
+        msg: "yum command produced errors"
+    when: yumcommandout is not defined

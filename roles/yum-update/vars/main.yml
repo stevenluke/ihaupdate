@@ -1,7 +1,7 @@
 ---
 # vars file for roles/yum-update
-#yum_name: "*"
-yum_name: "bash"
+yum_name: "*"
+#yum_name: "bash"
 yum_state:  latest
 yum_enablerepo: "rhel-?-server-rpms,rhel-?-server-satellite-tools-6.?-rpms"
 yum_disablerepo: "*"
