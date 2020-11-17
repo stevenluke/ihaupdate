@@ -6,5 +6,5 @@
   tasks:
   - name: Create test
     copy:
-      content:  "TEST TEST"
-      dest: /tmp/steve.txt
+      content:  "ANSIBLE TEST ANSIBLE TEST"
+      dest: /tmp/ansibletest.txt
